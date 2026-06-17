@@ -1,8 +1,15 @@
-import elevateImg from '../assets/honda_elevate.png';
-import cityImg from '../assets/honda_city.png';
-import cityHybridImg from '../assets/honda_city_hybrid.png';
-import amazeImg from '../assets/honda_amaze.png';
-
+import elevateImg from '../assets/new_elevate.webp';
+import elevateOrangeImg from '../assets/off_elevate_orange.png';
+import elevateRedImg from '../assets/off_elevate_red.png';
+import elevateWhiteImg from '../assets/off_elevate_white.png';
+import elevateBlueImg from '../assets/off_elevate_blue.png';
+import elevateBrownImg from '../assets/off_elevate_brown.png';
+import elevateGreyImg from '../assets/off_elevate_grey.png';
+import elevateSilverImg from '../assets/off_elevate_silver.png';
+import cityImg from '../assets/new_city.webp';
+import cityHybridImg from '../assets/new_city.webp'; 
+import amazeImg from '../assets/new_amaze.webp';
+import zrvImg from '../assets/new_zrv.webp';
 export const HONDA_CARS = [
   {
     id: 'elevate',
@@ -23,13 +30,13 @@ export const HONDA_CARS = [
       groundClearance: '220 mm'
     },
     colors: [
-      { name: 'Phoenix Orange Pearl', hex: '#ff6900', imgTint: 'hue-rotate-15 saturate-150' },
-      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate-0 saturate-100' },
-      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness-125 saturate-50' },
-      { name: 'Obsidian Blue Pearl', hex: '#084177', imgTint: 'hue-rotate-[220deg] saturate-100' },
-      { name: 'Golden Brown Metallic', hex: '#5e3e23', imgTint: 'hue-rotate-[30deg] brightness-50' },
-      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness-100 saturate-0' },
-      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness-75 saturate-0' }
+      { name: 'Phoenix Orange Pearl', hex: '#ff6900', img: elevateOrangeImg },
+      { name: 'Radiant Red Metallic', hex: '#cf2e2e', img: elevateRedImg },
+      { name: 'Platinum White Pearl', hex: '#ffffff', img: elevateWhiteImg },
+      { name: 'Obsidian Blue Pearl', hex: '#084177', img: elevateBlueImg },
+      { name: 'Golden Brown Metallic', hex: '#5e3e23', img: elevateBrownImg },
+      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', img: elevateSilverImg },
+      { name: 'Meteoroid Gray Metallic', hex: '#475569', img: elevateGreyImg }
     ],
     features: [
       'Honda SENSING (Advanced Driver Assistance System)',
@@ -59,12 +66,12 @@ export const HONDA_CARS = [
       groundClearance: '165 mm'
     },
     colors: [
-      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate-0 saturate-100' },
-      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness-125 saturate-50' },
-      { name: 'Obsidian Blue Pearl', hex: '#084177', imgTint: 'hue-rotate-[220deg] saturate-100' },
-      { name: 'Golden Brown Metallic', hex: '#5e3e23', imgTint: 'hue-rotate-[30deg] brightness-50' },
-      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness-100 saturate-0' },
-      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness-75 saturate-0' }
+      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(0deg) saturate(1)' },
+      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
+      { name: 'Obsidian Blue Pearl', hex: '#084177', imgTint: 'hue-rotate(220deg) saturate(1)' },
+      { name: 'Golden Brown Metallic', hex: '#5e3e23', imgTint: 'hue-rotate(30deg) brightness(0.5)' },
+      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness(1) saturate(0)' },
+      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness(0.75) saturate(0)' }
     ],
     features: [
       'Honda SENSING (ADAS) in Manual & CVT',
@@ -94,11 +101,11 @@ export const HONDA_CARS = [
       groundClearance: '162 mm'
     },
     colors: [
-      { name: 'Obsidian Blue Pearl', hex: '#084177', imgTint: 'hue-rotate-0 saturate-100' },
-      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate-[140deg] saturate-150' },
-      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness-125 saturate-50' },
-      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness-100 saturate-0' },
-      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness-75 saturate-0' }
+      { name: 'Obsidian Blue Pearl', hex: '#084177', imgTint: 'hue-rotate(0deg) saturate(1)' },
+      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(140deg) saturate(1.5)' },
+      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
+      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness(1) saturate(0)' },
+      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness(0.75) saturate(0)' }
     ],
     features: [
       'Advanced Multi-Mode Drive (EV, Hybrid, Engine)',
@@ -128,11 +135,11 @@ export const HONDA_CARS = [
       groundClearance: '170 mm'
     },
     colors: [
-      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness-125 saturate-50' },
-      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate-0 saturate-100' },
-      { name: 'Golden Brown Metallic', hex: '#5e3e23', imgTint: 'hue-rotate-[30deg] brightness-50' },
-      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness-100 saturate-0' },
-      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness-75 saturate-0' }
+      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
+      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(0deg) saturate(1)' },
+      { name: 'Golden Brown Metallic', hex: '#5e3e23', imgTint: 'hue-rotate(30deg) brightness(0.5)' },
+      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness(1) saturate(0)' },
+      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness(0.75) saturate(0)' }
     ],
     features: [
       'Premium Beige Seats with Contour Styling',
@@ -141,6 +148,38 @@ export const HONDA_CARS = [
       'Smart Entry with Push Button Start',
       'LED Projector Headlamps with DRLs',
       'Rear Camera with 3 View Directions'
+    ]
+  },
+  {
+    id: 'zrv',
+    name: 'Honda ZR-V',
+    type: 'SUV',
+    tagline: 'Bookings Open',
+    price: 2000000,
+    priceStr: 'Bookings Open *',
+    img: zrvImg,
+    description: 'A premium, sporty SUV designed for the modern driver. Melding sleek aesthetics with Honda\'s legendary performance and cutting-edge tech.',
+    specs: {
+      engine: '2.0L i-VTEC Hybrid / 1.5L Turbo',
+      power: '184 PS @ 6000 rpm',
+      torque: '315 Nm @ 4000 rpm',
+      transmission: 'e-CVT / CVT',
+      mileage: '18.6 - 22.0 kmpl',
+      fuel: 'Petrol Hybrid',
+      groundClearance: '180 mm'
+    },
+    colors: [
+      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
+      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(0deg) saturate(1)' },
+      { name: 'Crystal Black Pearl', hex: '#000000', imgTint: 'brightness(0.5) saturate(0)' }
+    ],
+    features: [
+      'Sporty, Sleek Exterior Design',
+      'Honda SENSING Suite',
+      '9-inch Display Audio System',
+      'Dual Zone Automatic Climate Control',
+      'Panoramic Glass Sunroof',
+      'Premium Audio System'
     ]
   }
 ];
@@ -159,7 +198,7 @@ export const OUTLETS = [
     id: 'bavdhan-workshop',
     name: 'Bavdhan Workshop',
     role: 'Service Workshop',
-    address: 'S.No. 268, Mantri Alpine, Mumbai-Bangalore Highway, Bavdhan-Budruk, Pune 411021', // Fixed double comma
+    address: 'S.No. 268, Mantri Alpine, Mumbai-Bangalore Highway, Bavdhan-Budruk, Pune 411021',
     phone: '+91 9158882222',
     email: 'service.bavdhan@crystalhonda.in',
     mapUrl: 'https://maps.google.com/?q=Mantri+Alpine,+Bavdhan,+Pune'
@@ -207,7 +246,7 @@ export const REVIEWS = [
     id: 1,
     name: 'Rahul Kadam',
     rating: 5,
-    comment: 'I recently purchased the Honda Elevate from Bavdhan Showroom. The team was extremely professional and the delivery process was absolutely seamless. Outstanding service!', // Corrected double text
+    comment: 'I recently purchased the Honda Elevate from Bavdhan Showroom. The team was extremely professional and the delivery process was absolutely seamless. Outstanding service!',
     date: '2 weeks ago'
   },
   {

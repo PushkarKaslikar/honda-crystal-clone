@@ -113,11 +113,11 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto">
-      <div className="relative bg-slate-900 border border-slate-800 text-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4 overflow-y-auto">
+      <div className="relative bg-white border border-slate-200 text-slate-900 rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         
         {/* Banner/Header */}
-        <div className="bg-gradient-to-r from-honda-red to-red-800 px-6 py-5 flex justify-between items-center">
+        <div className="bg-gradient-to-r from-honda-red to-red-800 px-6 py-5 flex justify-between items-center text-white">
           <div>
             <h3 className="font-display text-xl font-bold">{formTitles[formType]}</h3>
             <p className="text-red-100 text-xs mt-1">Crystal Honda - Premium Dealership Network</p>
@@ -131,7 +131,7 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
         </div>
 
         {/* Form Selection Tabs */}
-        <div className="flex border-b border-slate-800 bg-slate-950 overflow-x-auto">
+        <div className="flex border-b border-slate-200 bg-slate-50 overflow-x-auto">
           {Object.keys(formTitles).map((key) => (
             <button
               key={key}
@@ -142,8 +142,8 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               }}
               className={`px-4 py-3 text-xs font-semibold whitespace-nowrap transition-colors border-b-2 ${
                 formType === key 
-                  ? 'border-honda-red text-honda-red bg-slate-900/50' 
-                  : 'border-transparent text-slate-400 hover:text-white'
+                  ? 'border-honda-red text-honda-red bg-white' 
+                  : 'border-transparent text-slate-600 hover:text-slate-900'
               }`}
             >
               {key === 'test-drive' ? 'Test Drive' : key === 'service' ? 'Servicing' : key === 'finance' ? 'Finance' : key === 'insurance' ? 'Insurance' : 'Contact'}
@@ -155,13 +155,13 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
         <div className="p-6">
           {success ? (
             <div className="text-center py-10 animate-in fade-in duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/10 border border-green-500/30 text-green-400 rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-50 border border-green-200 text-green-600 rounded-full mb-4">
                 <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h4 className="font-display text-lg font-bold text-white mb-2">Request Submitted!</h4>
-              <p className="text-slate-400 text-sm max-w-xs mx-auto">
+              <h4 className="font-display text-lg font-bold text-slate-900 mb-2">Request Submitted!</h4>
+              <p className="text-slate-600 text-sm max-w-xs mx-auto">
                 Thank you for choosing Crystal Honda. Our advisor will call you shortly on your provided phone number.
               </p>
             </div>
@@ -169,16 +169,16 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
             <form onSubmit={handleSubmit} className="space-y-4">
               
               {error && (
-                <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-xs p-3 rounded-lg">
+                <div className="bg-red-50 border border-red-200 text-red-600 text-xs p-3 rounded-lg">
                   {error}
                 </div>
               )}
 
               {/* Name */}
               <div>
-                <label className="block text-slate-400 text-xs font-medium mb-1">Full Name *</label>
+                <label className="block text-slate-700 text-xs font-medium mb-1">Full Name *</label>
                 <div className="relative">
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                     <User className="w-4 h-4" />
                   </span>
                   <input
@@ -188,7 +188,7 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
                     onChange={handleInputChange}
                     required
                     placeholder="Enter your name"
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-white placeholder-slate-600 transition-colors"
+                    className="w-full bg-white border border-slate-300 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors"
                   />
                 </div>
               </div>
@@ -196,9 +196,9 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               {/* Phone and Email */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-slate-400 text-xs font-medium mb-1">Phone Number *</label>
+                  <label className="block text-slate-700 text-xs font-medium mb-1">Phone Number *</label>
                   <div className="relative">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                       <Phone className="w-4 h-4" />
                     </span>
                     <input
@@ -208,14 +208,14 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
                       onChange={handleInputChange}
                       required
                       placeholder="Mobile number"
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-white placeholder-slate-600 transition-colors"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-slate-400 text-xs font-medium mb-1">Email Address</label>
+                  <label className="block text-slate-700 text-xs font-medium mb-1">Email Address</label>
                   <div className="relative">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                       <Mail className="w-4 h-4" />
                     </span>
                     <input
@@ -224,7 +224,7 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="your.email@gmail.com"
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-white placeholder-slate-600 transition-colors"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors"
                     />
                   </div>
                 </div>
@@ -235,16 +235,16 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               {/* Test Drive or Finance or Insurance - Model selection */}
               {['test-drive', 'finance', 'insurance', 'service'].includes(formType) && (
                 <div>
-                  <label className="block text-slate-400 text-xs font-medium mb-1">Vehicle Model</label>
+                  <label className="block text-slate-700 text-xs font-medium mb-1">Vehicle Model</label>
                   <div className="relative">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                       <Car className="w-4 h-4" />
                     </span>
                     <select
                       name="model"
                       value={formData.model}
                       onChange={handleInputChange}
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-white transition-colors appearance-none"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 focus:bg-slate-50 transition-colors appearance-none"
                     >
                       {HONDA_CARS.map(car => (
                         <option key={car.id} value={car.id}>{car.name}</option>
@@ -258,16 +258,16 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               {formType === 'service' && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-slate-400 text-xs font-medium mb-1">Service Type</label>
+                    <label className="block text-slate-700 text-xs font-medium mb-1">Service Type</label>
                     <div className="relative">
-                      <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+                      <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                         <Shield className="w-4 h-4" />
                       </span>
                       <select
                         name="serviceType"
                         value={formData.serviceType}
                         onChange={handleInputChange}
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-white transition-colors appearance-none"
+                        className="w-full bg-white border border-slate-300 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 focus:bg-slate-50 transition-colors appearance-none"
                       >
                         <option value="Routine Maintenance">Routine Maintenance</option>
                         <option value="Mechanical Repairs">Mechanical Repair</option>
@@ -278,16 +278,16 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
                     </div>
                   </div>
                   <div>
-                    <label className="block text-slate-400 text-xs font-medium mb-1">Preferred Workshop</label>
+                    <label className="block text-slate-700 text-xs font-medium mb-1">Preferred Workshop</label>
                     <div className="relative">
-                      <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+                      <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                         <MapPin className="w-4 h-4" />
                       </span>
                       <select
                         name="workshop"
                         value={formData.workshop}
                         onChange={handleInputChange}
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-white transition-colors appearance-none"
+                        className="w-full bg-white border border-slate-300 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 focus:bg-slate-50 transition-colors appearance-none"
                       >
                         {OUTLETS.filter(o => o.role.toLowerCase().includes('service') || o.role.toLowerCase().includes('workshop')).map(outlet => (
                           <option key={outlet.id} value={outlet.id}>{outlet.name}</option>
@@ -301,16 +301,16 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               {/* Showroom location (for Test Drive / Finance) */}
               {['test-drive', 'finance'].includes(formType) && (
                 <div>
-                  <label className="block text-slate-400 text-xs font-medium mb-1">Preferred Showroom</label>
+                  <label className="block text-slate-700 text-xs font-medium mb-1">Preferred Showroom</label>
                   <div className="relative">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                       <MapPin className="w-4 h-4" />
                     </span>
                     <select
                       name="location"
                       value={formData.location}
                       onChange={handleInputChange}
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-white transition-colors appearance-none"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 focus:bg-slate-50 transition-colors appearance-none"
                     >
                       {OUTLETS.filter(o => o.role.toLowerCase().includes('sales') || o.role.toLowerCase().includes('showroom')).map(outlet => (
                         <option key={outlet.id} value={outlet.id}>{outlet.name}</option>
@@ -323,9 +323,9 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               {/* Test Drive - Date */}
               {formType === 'test-drive' && (
                 <div>
-                  <label className="block text-slate-400 text-xs font-medium mb-1">Preferred Test Drive Date</label>
+                  <label className="block text-slate-700 text-xs font-medium mb-1">Preferred Test Drive Date</label>
                   <div className="relative">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                       <Calendar className="w-4 h-4" />
                     </span>
                     <input
@@ -333,7 +333,7 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
                       name="preferredDate"
                       value={formData.preferredDate}
                       onChange={handleInputChange}
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-white transition-colors"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 focus:bg-slate-50 transition-colors"
                     />
                   </div>
                 </div>
@@ -343,25 +343,25 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               {formType === 'insurance' && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-slate-400 text-xs font-medium mb-1">Registration Number</label>
+                    <label className="block text-slate-700 text-xs font-medium mb-1">Registration Number</label>
                     <input
                       type="text"
                       name="regNo"
                       value={formData.regNo}
                       onChange={handleInputChange}
                       placeholder="e.g. MH-12-AB-1234"
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-white placeholder-slate-600 transition-colors"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-400 text-xs font-medium mb-1">Year of Purchase</label>
+                    <label className="block text-slate-700 text-xs font-medium mb-1">Year of Purchase</label>
                     <input
                       type="number"
                       name="purchaseYear"
                       value={formData.purchaseYear}
                       onChange={handleInputChange}
                       placeholder="e.g. 2022"
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-white placeholder-slate-600 transition-colors"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors"
                     />
                   </div>
                 </div>
@@ -370,28 +370,28 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               {/* Contact Us - Subject */}
               {formType === 'contact' && (
                 <div>
-                  <label className="block text-slate-400 text-xs font-medium mb-1">Subject</label>
+                  <label className="block text-slate-700 text-xs font-medium mb-1">Subject</label>
                   <input
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
                     placeholder="Enquiry Subject"
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-white placeholder-slate-600 transition-colors"
+                    className="w-full bg-white border border-slate-300 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors"
                   />
                 </div>
               )}
 
               {/* Message */}
               <div>
-                <label className="block text-slate-400 text-xs font-medium mb-1">Message / Special Instructions</label>
+                <label className="block text-slate-700 text-xs font-medium mb-1">Message / Special Instructions</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   rows="3"
                   placeholder="Tell us about your requirements..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-white placeholder-slate-600 transition-colors resize-none"
+                  className="w-full bg-white border border-slate-300 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors resize-none"
                 />
               </div>
 
@@ -399,10 +399,10 @@ export default function BookingModal({ isOpen, onClose, initialType = 'test-driv
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-honda-red hover:bg-honda-redHover disabled:bg-slate-800 text-white font-bold py-3 rounded-xl transition-all duration-200 shadow-lg glow-red-hover flex items-center justify-center text-sm"
+                className="w-full bg-honda-red hover:bg-honda-redHover disabled:bg-slate-300 disabled:text-slate-500 text-white font-bold py-3 rounded-xl transition-all duration-200 shadow-sm flex items-center justify-center text-sm"
               >
                 {loading ? (
-                  <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                  <span className="w-5 h-5 border-2 border-slate-500/30 border-t-slate-500 rounded-full animate-spin"></span>
                 ) : (
                   'Submit Request'
                 )}

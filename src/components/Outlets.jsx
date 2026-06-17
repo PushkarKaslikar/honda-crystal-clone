@@ -12,7 +12,7 @@ export default function Outlets() {
     : OUTLETS.filter(o => o.address.toUpperCase().includes(cityFilter));
 
   return (
-    <section id="outlets" className="py-20 px-6 md:px-12 bg-slate-900 border-t border-slate-800 text-white">
+    <section id="outlets" className="py-20 px-6 md:px-12 bg-white border-t border-slate-200 text-slate-900">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -21,14 +21,14 @@ export default function Outlets() {
           <h2 className="font-display text-3xl md:text-5xl font-black tracking-tight leading-tight">
             Our Showrooms & Workshops
           </h2>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed">
             Visit our authorized dealers and advanced workshops in Pune and Satara. Get professional sales advice and factory-certified support.
           </p>
         </div>
 
         {/* City Filter Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-slate-950 p-1 rounded-full border border-slate-850">
+          <div className="inline-flex bg-slate-50 p-1 rounded-full border border-slate-200">
             {cities.map((city) => (
               <button
                 key={city}
@@ -36,7 +36,7 @@ export default function Outlets() {
                 className={`px-6 py-2 rounded-full text-xs font-bold tracking-wide transition-all ${
                   cityFilter === city
                     ? 'bg-honda-red text-white shadow-md'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-slate-500 hover:text-slate-900 hover:bg-white'
                 }`}
               >
                 {city === 'ALL' ? 'All Locations' : city}
@@ -53,47 +53,47 @@ export default function Outlets() {
             return (
               <div 
                 key={outlet.id}
-                className="bg-slate-950 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700/60 transition-all duration-300 flex flex-col justify-between shadow-lg group"
+                className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group"
               >
                 <div className="space-y-4">
                   {/* Badge */}
                   <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wide ${
                     isService 
-                      ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' 
+                      ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20' 
                       : 'bg-honda-red/10 text-honda-red border border-honda-red/20'
                   }`}>
                     {outlet.role}
                   </span>
 
                   {/* Name */}
-                  <h3 className="font-display text-lg font-bold text-white group-hover:text-honda-red transition-colors">
+                  <h3 className="font-display text-lg font-bold text-slate-900 group-hover:text-honda-red transition-colors">
                     {outlet.name}
                   </h3>
 
                   {/* Contact details */}
-                  <div className="space-y-3.5 text-xs text-slate-350 pt-2">
+                  <div className="space-y-3.5 text-xs text-slate-600 pt-2">
                     {/* Address */}
                     <div className="flex items-start gap-2.5">
-                      <MapPin className="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" />
+                      <MapPin className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{outlet.address}</span>
                     </div>
 
                     {/* Phone */}
                     <div className="flex items-center gap-2.5">
-                      <Phone className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                      <Phone className="w-4 h-4 text-slate-400 flex-shrink-0" />
                       {outlet.phone.includes(',') ? (
                         <div className="flex flex-col">
                           {outlet.phone.split(',').map((num, i) => {
                             const trimmedNum = num.replace(/[^\d+]/g, '');
                             return (
-                              <a key={i} href={`tel:${trimmedNum}`} className="hover:text-white transition-colors">
+                              <a key={i} href={`tel:${trimmedNum}`} className="hover:text-slate-900 transition-colors">
                                 {num.trim()}
                               </a>
                             );
                           })}
                         </div>
                       ) : (
-                        <a href={`tel:${outlet.phone.replace(/[^\d+]/g, '')}`} className="hover:text-white transition-colors">
+                        <a href={`tel:${outlet.phone.replace(/[^\d+]/g, '')}`} className="hover:text-slate-900 transition-colors">
                           {outlet.phone}
                         </a>
                       )}
@@ -101,8 +101,8 @@ export default function Outlets() {
 
                     {/* Email */}
                     <div className="flex items-center gap-2.5">
-                      <Mail className="w-4 h-4 text-slate-500 flex-shrink-0" />
-                      <a href={`mailto:${outlet.email}`} className="hover:text-white transition-colors break-all">
+                      <Mail className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                      <a href={`mailto:${outlet.email}`} className="hover:text-slate-900 transition-colors break-all">
                         {outlet.email}
                       </a>
                     </div>
@@ -110,12 +110,12 @@ export default function Outlets() {
                 </div>
 
                 {/* Google Maps CTA */}
-                <div className="pt-6 mt-6 border-t border-slate-900">
+                <div className="pt-6 mt-6 border-t border-slate-100">
                   <a
                     href={outlet.mapUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 text-slate-200 font-semibold py-2.5 rounded-xl transition-all duration-200 text-xs flex items-center justify-center gap-1.5 active:scale-95"
+                    className="w-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 font-semibold py-2.5 rounded-xl transition-all duration-200 text-xs flex items-center justify-center gap-1.5 active:scale-95 shadow-sm"
                   >
                     <Navigation className="w-3.5 h-3.5 text-honda-red" />
                     Get Directions on Maps

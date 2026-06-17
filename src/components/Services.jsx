@@ -37,9 +37,9 @@ export default function Services({ onOpenBooking }) {
     },
     {
       id: 'exchange',
-      title: 'Auto Terrace (Exchange)', // Fixed spelling
+      title: 'Auto Terrace (Exchange)',
       icon: ArrowLeftRight,
-      subtitle: 'Exchange Your Existing Car', // Fixed spelling "Exvhange"
+      subtitle: 'Exchange Your Existing Car',
       description: 'Auto Terrace is Honda’s authorized pre-owned car division. We make trading in your current car smooth, transparent, and high-value. Get a professional appraisal and transition into a new Honda today.',
       points: [
         'Fair market-based valuation with transparent digital scoring',
@@ -55,7 +55,7 @@ export default function Services({ onOpenBooking }) {
     },
     {
       id: 'repair',
-      title: 'Car Repair', // Fixed spelling "Car Rapair"
+      title: 'Car Repair',
       icon: Sparkles,
       subtitle: 'Accident Repair & Body Shop Painting',
       description: 'Accidents are stressful; getting your car fixed shouldn’t be. Our body workshops feature original paint-matching tech, chassis alignment systems, and factory-finish repairs.',
@@ -74,7 +74,7 @@ export default function Services({ onOpenBooking }) {
   const IconComponent = currentTabObj.icon;
 
   return (
-    <section id="services" className="py-20 px-6 md:px-12 bg-slate-950 text-white border-t border-slate-900">
+    <section id="services" className="py-20 px-6 md:px-12 bg-white text-slate-900 border-t border-slate-200">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -83,7 +83,7 @@ export default function Services({ onOpenBooking }) {
           <h2 className="font-display text-3xl md:text-5xl font-black tracking-tight leading-tight">
             Comprehensive Services
           </h2>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed">
             From quick oil changes to comprehensive engine diagnostics and insurance renewal, our certified team handles everything with factory precision.
           </p>
         </div>
@@ -101,8 +101,8 @@ export default function Services({ onOpenBooking }) {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-4 px-6 py-4.5 rounded-xl border text-left font-display font-bold text-sm transition-all duration-200 whitespace-nowrap lg:whitespace-normal flex-1 lg:flex-none ${
                     activeTab === tab.id
-                      ? 'bg-honda-red border-honda-red text-white shadow-lg shadow-honda-red/10'
-                      : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:border-slate-700'
+                      ? 'bg-honda-red border-honda-red text-white shadow-md'
+                      : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-white hover:border-slate-300 shadow-sm'
                   }`}
                 >
                   <TabIcon className="w-5 h-5 flex-shrink-0" />
@@ -113,40 +113,40 @@ export default function Services({ onOpenBooking }) {
           </div>
 
           {/* Details Panel (8 columns) */}
-          <div className="lg:col-span-8 bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 md:p-8 animate-in fade-in duration-300">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+          <div className="lg:col-span-8 bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 animate-in fade-in duration-300 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-200">
               <div className="space-y-1">
                 <span className="text-honda-red text-xs font-bold uppercase tracking-wider block">
                   {currentTabObj.title}
                 </span>
-                <h3 className="font-display text-xl md:text-2xl font-bold text-white">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-slate-900">
                   {currentTabObj.subtitle}
                 </h3>
               </div>
-              <div className="p-3 bg-slate-850 border border-slate-800 rounded-xl w-fit">
+              <div className="p-3 bg-white border border-slate-200 rounded-xl w-fit shadow-sm">
                 <IconComponent className="w-7 h-7 text-honda-red" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   {currentTabObj.description}
                 </p>
                 <button
                   onClick={currentTabObj.action}
-                  className="bg-honda-red hover:bg-honda-redHover text-white px-6 py-3 rounded-xl font-bold text-xs transition-all flex items-center gap-1.5 shadow-lg active:scale-95 glow-red-hover"
+                  className="bg-honda-red hover:bg-honda-redHover text-white px-6 py-3 rounded-xl font-bold text-xs transition-all flex items-center gap-1.5 shadow-md active:scale-95 glow-red-hover"
                 >
                   {currentTabObj.ctaText}
                   <Navigation className="w-3.5 h-3.5" />
                 </button>
               </div>
               <div className="space-y-3.5">
-                <span className="text-slate-400 text-xs font-bold uppercase tracking-wider block">Service Features:</span>
-                <ul className="space-y-3 text-xs md:text-sm text-slate-300">
+                <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block">Service Features:</span>
+                <ul className="space-y-3 text-xs md:text-sm text-slate-700">
                   {currentTabObj.points.map((pt) => (
                     <li key={pt} className="flex items-start gap-2.5">
-                      <span className="w-4 h-4 rounded-full bg-slate-800 flex items-center justify-center text-[10px] text-honda-red font-bold flex-shrink-0 mt-0.5">✓</span>
+                      <span className="w-4 h-4 rounded-full bg-slate-200 flex items-center justify-center text-[10px] text-honda-red font-bold flex-shrink-0 mt-0.5">✓</span>
                       <span>{pt}</span>
                     </li>
                   ))}

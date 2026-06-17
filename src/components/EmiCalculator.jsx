@@ -52,7 +52,7 @@ export default function EmiCalculator({ onOpenBooking }) {
   const downPaymentVal = Math.round((downPaymentPct / 100) * activeCar.price);
 
   return (
-    <section id="finance" className="py-20 px-6 md:px-12 bg-slate-950 text-white border-t border-slate-900 relative">
+    <section id="finance" className="py-20 px-6 md:px-12 bg-white text-slate-900 border-t border-slate-200 relative">
       
       {/* Decorative Blur BG */}
       <div className="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-honda-red/5 blur-[120px] -translate-y-1/2 pointer-events-none" />
@@ -65,7 +65,7 @@ export default function EmiCalculator({ onOpenBooking }) {
           <h2 className="font-display text-3xl md:text-5xl font-black tracking-tight leading-tight">
             Loan EMI Calculator
           </h2>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed">
             Planning your purchase has never been simpler. Select your desired car model, adjust down payments, interest rates, and loan tenures to find your perfect payment setup.
           </p>
         </div>
@@ -74,19 +74,19 @@ export default function EmiCalculator({ onOpenBooking }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Sliders Area (7 columns) */}
-          <div className="lg:col-span-7 bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-xl">
+          <div className="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm">
             
             <div className="space-y-6">
               
               {/* Heading */}
-              <div className="flex items-center gap-2 pb-4 border-b border-slate-850">
+              <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
                 <BadgeDollarSign className="w-5 h-5 text-honda-red" />
                 <h3 className="font-display text-lg font-bold">Adjust Loan Parameters</h3>
               </div>
 
               {/* Model Choice */}
               <div>
-                <label className="block text-slate-400 text-xs font-semibold mb-2">Select Honda Car Model</label>
+                <label className="block text-slate-600 text-xs font-semibold mb-2">Select Honda Car Model</label>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
                   {HONDA_CARS.map(car => (
                     <button
@@ -95,7 +95,7 @@ export default function EmiCalculator({ onOpenBooking }) {
                       className={`p-3 rounded-xl border text-xs font-bold transition-all text-center ${
                         selectedId === car.id
                           ? 'bg-honda-red border-honda-red text-white shadow-md'
-                          : 'bg-slate-950 border-slate-850 text-slate-400 hover:text-white'
+                          : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                       }`}
                     >
                       {car.name}
@@ -107,8 +107,8 @@ export default function EmiCalculator({ onOpenBooking }) {
               {/* Down Payment Slider */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-semibold">
-                  <span className="text-slate-400">Down Payment ({downPaymentPct}%)</span>
-                  <span className="text-white bg-slate-950 px-3 py-1 border border-slate-850 rounded-full font-mono">
+                  <span className="text-slate-600">Down Payment ({downPaymentPct}%)</span>
+                  <span className="text-slate-900 bg-white px-3 py-1 border border-slate-200 rounded-full font-mono shadow-sm">
                     ₹{downPaymentVal.toLocaleString()}
                   </span>
                 </div>
@@ -119,9 +119,9 @@ export default function EmiCalculator({ onOpenBooking }) {
                   step="5"
                   value={downPaymentPct}
                   onChange={(e) => setDownPaymentPct(parseInt(e.target.value))}
-                  className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-honda-red"
+                  className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-honda-red"
                 />
-                <div className="flex justify-between text-[10px] text-slate-600 font-medium">
+                <div className="flex justify-between text-[10px] text-slate-500 font-medium">
                   <span>10% (Min)</span>
                   <span>50%</span>
                   <span>90% (Max)</span>
@@ -131,8 +131,8 @@ export default function EmiCalculator({ onOpenBooking }) {
               {/* Interest Rate Slider */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-semibold">
-                  <span className="text-slate-400">Annual Interest Rate</span>
-                  <span className="text-white bg-slate-950 px-3 py-1 border border-slate-850 rounded-full font-mono">
+                  <span className="text-slate-600">Annual Interest Rate</span>
+                  <span className="text-slate-900 bg-white px-3 py-1 border border-slate-200 rounded-full font-mono shadow-sm">
                     {interestRate}% p.a.
                   </span>
                 </div>
@@ -143,9 +143,9 @@ export default function EmiCalculator({ onOpenBooking }) {
                   step="0.1"
                   value={interestRate}
                   onChange={(e) => setInterestRate(parseFloat(e.target.value))}
-                  className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-honda-red"
+                  className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-honda-red"
                 />
-                <div className="flex justify-between text-[10px] text-slate-600 font-medium">
+                <div className="flex justify-between text-[10px] text-slate-500 font-medium">
                   <span>7.0%</span>
                   <span>11.5%</span>
                   <span>16.0%</span>
@@ -155,8 +155,8 @@ export default function EmiCalculator({ onOpenBooking }) {
               {/* Tenure Slider */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-semibold">
-                  <span className="text-slate-400">Loan Tenure</span>
-                  <span className="text-white bg-slate-950 px-3 py-1 border border-slate-850 rounded-full font-mono">
+                  <span className="text-slate-600">Loan Tenure</span>
+                  <span className="text-slate-900 bg-white px-3 py-1 border border-slate-200 rounded-full font-mono shadow-sm">
                     {tenureYears} Years ({tenureYears * 12} months)
                   </span>
                 </div>
@@ -167,9 +167,9 @@ export default function EmiCalculator({ onOpenBooking }) {
                   step="1"
                   value={tenureYears}
                   onChange={(e) => setTenureYears(parseInt(e.target.value))}
-                  className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-honda-red"
+                  className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-honda-red"
                 />
-                <div className="flex justify-between text-[10px] text-slate-600 font-medium">
+                <div className="flex justify-between text-[10px] text-slate-500 font-medium">
                   <span>1 Year</span>
                   <span>4 Years</span>
                   <span>7 Years</span>
@@ -181,10 +181,10 @@ export default function EmiCalculator({ onOpenBooking }) {
           </div>
 
           {/* Results Summary (5 columns) */}
-          <div className="lg:col-span-5 bg-slate-950 border border-slate-800/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-xl">
+          <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm">
             <div className="space-y-6">
               
-              <div className="pb-4 border-b border-slate-850">
+              <div className="pb-4 border-b border-slate-100">
                 <span className="text-slate-500 text-[10px] uppercase font-bold tracking-wider block">Estimated Monthly Installment</span>
                 <span className="text-4xl md:text-5xl font-black text-honda-red font-display block mt-1 tracking-tight">
                   ₹{emiDetails.emi.toLocaleString()}<span className="text-xs text-slate-500 font-normal"> / month</span>
@@ -193,24 +193,24 @@ export default function EmiCalculator({ onOpenBooking }) {
 
               {/* Summary table */}
               <div className="space-y-3.5 text-xs">
-                <div className="flex justify-between py-1.5 border-b border-slate-850 text-slate-400">
+                <div className="flex justify-between py-1.5 border-b border-slate-100 text-slate-600">
                   <span>Ex-Showroom Cost:</span>
-                  <span className="font-semibold text-white">₹{activeCar.price.toLocaleString()}</span>
+                  <span className="font-semibold text-slate-900">₹{activeCar.price.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between py-1.5 border-b border-slate-850 text-slate-400">
+                <div className="flex justify-between py-1.5 border-b border-slate-100 text-slate-600">
                   <span>Down Payment paid:</span>
-                  <span className="font-semibold text-white">- ₹{downPaymentVal.toLocaleString()}</span>
+                  <span className="font-semibold text-slate-900">- ₹{downPaymentVal.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between py-1.5 border-b border-slate-850 text-slate-400">
+                <div className="flex justify-between py-1.5 border-b border-slate-100 text-slate-600">
                   <span>Principal Loan Amount (P):</span>
-                  <span className="font-semibold text-white">₹{emiDetails.principal.toLocaleString()}</span>
+                  <span className="font-semibold text-slate-900">₹{emiDetails.principal.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between py-1.5 border-b border-slate-850 text-slate-400">
+                <div className="flex justify-between py-1.5 border-b border-slate-100 text-slate-600">
                   <span>Total Interest Payable:</span>
-                  <span className="font-semibold text-white text-orange-400">₹{emiDetails.interestPayable.toLocaleString()}</span>
+                  <span className="font-semibold text-orange-600">₹{emiDetails.interestPayable.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-slate-800 text-sm">
-                  <span className="font-bold text-white">Total Amount Repayable:</span>
+                <div className="flex justify-between py-2 border-b border-slate-200 text-sm">
+                  <span className="font-bold text-slate-900">Total Amount Repayable:</span>
                   <span className="font-extrabold text-honda-red font-display">₹{emiDetails.totalRepayment.toLocaleString()}</span>
                 </div>
               </div>
@@ -220,7 +220,7 @@ export default function EmiCalculator({ onOpenBooking }) {
             <div className="mt-8 space-y-3">
               <button
                 onClick={() => onOpenBooking('finance', selectedId)}
-                className="w-full bg-honda-red hover:bg-honda-redHover py-3.5 rounded-xl text-xs font-bold text-white transition-all shadow-lg glow-red-hover flex items-center justify-center gap-1.5 active:scale-95"
+                className="w-full bg-honda-red hover:bg-honda-redHover py-3.5 rounded-xl text-xs font-bold text-white transition-all shadow-md glow-red-hover flex items-center justify-center gap-1.5 active:scale-95"
               >
                 Apply for Finance Approval
                 <ChevronRight className="w-4 h-4" />

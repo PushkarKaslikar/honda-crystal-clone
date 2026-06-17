@@ -102,7 +102,7 @@ export default function AutoTerrace() {
   };
 
   return (
-    <section id="autoterrace" className="py-20 px-6 md:px-12 bg-slate-900 text-white relative">
+    <section id="autoterrace" className="py-20 px-6 md:px-12 bg-slate-50 text-slate-900 relative">
       
       {/* Visual Accent */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-honda-red/5 blur-[120px] pointer-events-none" />
@@ -115,7 +115,7 @@ export default function AutoTerrace() {
           <h2 className="font-display text-3xl md:text-5xl font-black tracking-tight leading-tight">
             Exchange & Upgrade Program
           </h2>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed">
             Trade-in your current car at the best market valuation. Select your details below to get an instant digital valuation credit towards a brand new Honda.
           </p>
         </div>
@@ -124,10 +124,10 @@ export default function AutoTerrace() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Inputs Section (7 columns) */}
-          <div className="lg:col-span-7 bg-slate-950 border border-slate-800/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-xl">
+          <div className="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm">
             
             <div className="space-y-6">
-              <div className="flex items-center gap-2 pb-4 border-b border-slate-800">
+              <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
                 <ClipboardCheck className="w-5 h-5 text-honda-red" />
                 <h3 className="font-display text-lg font-bold">1. Enter Your Current Car Details</h3>
               </div>
@@ -136,12 +136,12 @@ export default function AutoTerrace() {
                 
                 {/* Brand */}
                 <div>
-                  <label className="block text-slate-400 text-xs font-semibold mb-1.5">Brand / Make</label>
+                  <label className="block text-slate-600 text-xs font-semibold mb-1.5">Brand / Make</label>
                   <select
                     name="brand"
                     value={inputs.brand}
                     onChange={handleInputChange}
-                    className="w-full bg-slate-900 border border-slate-800 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-white"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 focus:bg-white transition-colors"
                   >
                     <option value="Honda">Honda (Loyalty loyalty bonus!)</option>
                     <option value="Maruti Suzuki">Maruti Suzuki</option>
@@ -157,25 +157,25 @@ export default function AutoTerrace() {
 
                 {/* Model */}
                 <div>
-                  <label className="block text-slate-400 text-xs font-semibold mb-1.5">Model Name</label>
+                  <label className="block text-slate-600 text-xs font-semibold mb-1.5">Model Name</label>
                   <input
                     type="text"
                     name="model"
                     value={inputs.model}
                     onChange={handleInputChange}
                     placeholder="e.g. Swift / City / i10"
-                    className="w-full bg-slate-900 border border-slate-800 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-white placeholder-slate-600"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-white transition-colors"
                   />
                 </div>
 
                 {/* Year */}
                 <div>
-                  <label className="block text-slate-400 text-xs font-semibold mb-1.5">Year of Purchase</label>
+                  <label className="block text-slate-600 text-xs font-semibold mb-1.5">Year of Purchase</label>
                   <select
                     name="year"
                     value={inputs.year}
                     onChange={handleInputChange}
-                    className="w-full bg-slate-900 border border-slate-800 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-white"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 focus:bg-white transition-colors"
                   >
                     {Array.from({ length: 17 }, (_, i) => 2026 - i).map(year => (
                       <option key={year} value={year}>{year}</option>
@@ -185,12 +185,12 @@ export default function AutoTerrace() {
 
                 {/* Condition */}
                 <div>
-                  <label className="block text-slate-400 text-xs font-semibold mb-1.5">Estimated Condition</label>
+                  <label className="block text-slate-600 text-xs font-semibold mb-1.5">Estimated Condition</label>
                   <select
                     name="condition"
                     value={inputs.condition}
                     onChange={handleInputChange}
-                    className="w-full bg-slate-900 border border-slate-800 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-white"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:border-honda-red text-slate-900 focus:bg-white transition-colors"
                   >
                     <option value="Excellent">Excellent (Scratchless, Full Records)</option>
                     <option value="Good">Good (Minor scratches, mechanically sound)</option>
@@ -204,8 +204,8 @@ export default function AutoTerrace() {
               {/* KMS Slider */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-400 font-semibold">Kilometers Driven</span>
-                  <span className="text-honda-red font-bold text-sm bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
+                  <span className="text-slate-600 font-semibold">Kilometers Driven</span>
+                  <span className="text-honda-red font-bold text-sm bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
                     {inputs.kms.toLocaleString()} km
                   </span>
                 </div>
@@ -216,9 +216,9 @@ export default function AutoTerrace() {
                   step="5000"
                   value={inputs.kms}
                   onChange={handleKmsChange}
-                  className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-honda-red"
+                  className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-honda-red"
                 />
-                <div className="flex justify-between text-[10px] text-slate-600">
+                <div className="flex justify-between text-[10px] text-slate-500">
                   <span>5,000 km</span>
                   <span>100,000 km</span>
                   <span>200,000 km+</span>
@@ -228,13 +228,13 @@ export default function AutoTerrace() {
             </div>
 
             {/* Target Car Select */}
-            <div className="mt-8 pt-6 border-t border-slate-800">
+            <div className="mt-8 pt-6 border-t border-slate-200">
               <div className="flex items-center gap-2 pb-4">
                 <Sparkles className="w-5 h-5 text-honda-red" />
                 <h3 className="font-display text-lg font-bold">2. Select Your New Honda Car</h3>
               </div>
               <div>
-                <label className="block text-slate-400 text-xs font-semibold mb-1.5">New Target Car Model</label>
+                <label className="block text-slate-600 text-xs font-semibold mb-1.5">New Target Car Model</label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {HONDA_CARS.map(car => (
                     <button
@@ -244,7 +244,7 @@ export default function AutoTerrace() {
                       className={`p-3 rounded-xl border text-xs font-bold text-center transition-all ${
                         inputs.targetHonda === car.id
                           ? 'bg-honda-red border-honda-red text-white shadow-md'
-                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:border-slate-700'
+                          : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-white'
                       }`}
                     >
                       {car.name}
@@ -257,11 +257,11 @@ export default function AutoTerrace() {
           </div>
 
           {/* Results Section (5 columns) */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden">
+          <div className="lg:col-span-5 bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden">
             <span className="absolute top-0 right-0 w-32 h-32 bg-honda-red/10 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="space-y-6">
-              <div className="flex items-center gap-2 pb-4 border-b border-slate-800">
+            <div className="space-y-6 relative z-10">
+              <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
                 <Scale className="w-5 h-5 text-honda-red" />
                 <h3 className="font-display text-lg font-bold">Exchange Analysis</h3>
               </div>
@@ -270,9 +270,9 @@ export default function AutoTerrace() {
               <div className="space-y-4">
                 
                 {/* Current Car Credit */}
-                <div className="p-4 bg-slate-900/80 border border-slate-800 rounded-xl relative">
+                <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
                   <span className="text-slate-500 text-[10px] uppercase font-bold tracking-wider block">Est. Trade-in Valuation Credit</span>
-                  <span className="text-3xl font-black text-green-400 font-display">
+                  <span className="text-3xl font-black text-green-600 font-display">
                     + ₹{valuation.toLocaleString()}
                   </span>
                   <p className="text-slate-500 text-[9px] mt-1.5 flex items-center gap-1">
@@ -282,22 +282,22 @@ export default function AutoTerrace() {
                 </div>
 
                 {/* Target Honda Price */}
-                <div className="flex justify-between items-center text-sm px-2 text-slate-400">
+                <div className="flex justify-between items-center text-sm px-2 text-slate-600">
                   <span>New {targetCar.name} Price:</span>
-                  <span className="font-semibold text-white">₹{targetCar.price.toLocaleString()} *</span>
+                  <span className="font-semibold text-slate-900">₹{targetCar.price.toLocaleString()} *</span>
                 </div>
 
                 {/* Transfer Arrow Icon */}
                 <div className="flex justify-center my-1">
-                  <div className="p-2 bg-slate-850 border border-slate-800 text-honda-red rounded-full">
+                  <div className="p-2 bg-slate-100 border border-slate-200 text-honda-red rounded-full">
                     <ArrowLeftRight className="w-4 h-4" />
                   </div>
                 </div>
 
                 {/* Net Cost Output */}
-                <div className="p-5 bg-slate-900 border border-slate-800 rounded-xl text-center">
-                  <span className="text-slate-400 text-xs block font-semibold">Net Upgrade Cost Payable</span>
-                  <span className="text-3xl md:text-4xl font-extrabold text-white font-display block mt-1 tracking-tight">
+                <div className="p-5 bg-slate-100 border border-slate-200 rounded-xl text-center">
+                  <span className="text-slate-600 text-xs block font-semibold">Net Upgrade Cost Payable</span>
+                  <span className="text-3xl md:text-4xl font-extrabold text-slate-900 font-display block mt-1 tracking-tight">
                     ₹{netPayable.toLocaleString()} *
                   </span>
                   <span className="text-[10px] text-slate-500 mt-2 block">
@@ -309,30 +309,30 @@ export default function AutoTerrace() {
             </div>
 
             {/* Quick Inspection Booking form inside result box */}
-            <div className="mt-8 pt-6 border-t border-slate-800 space-y-4">
-              <span className="block text-slate-400 text-xs font-semibold">Book Free Physical Inspection</span>
+            <div className="mt-8 pt-6 border-t border-slate-200 space-y-4 relative z-10">
+              <span className="block text-slate-600 text-xs font-semibold">Book Free Physical Inspection</span>
               
               {submitted ? (
-                <div className="bg-green-500/10 border border-green-500/30 text-green-400 text-xs p-3 rounded-lg text-center font-semibold">
+                <div className="bg-green-50 border border-green-200 text-green-700 text-xs p-3 rounded-lg text-center font-semibold">
                   ✓ Inspection request received successfully!
                 </div>
               ) : (
                 <form onSubmit={handleValuationSubmit} className="space-y-3">
-                  {error && <div className="text-red-400 text-[10px]">{error}</div>}
+                  {error && <div className="text-red-500 text-[10px]">{error}</div>}
                   <div className="grid grid-cols-2 gap-2">
                     <input
                       type="text"
                       placeholder="Your Name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="bg-slate-950 border border-slate-850 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-honda-red text-white"
+                      className="bg-white border border-slate-300 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors"
                     />
                     <input
                       type="tel"
                       placeholder="Phone Number"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="bg-slate-950 border border-slate-850 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-honda-red text-white"
+                      className="bg-white border border-slate-300 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-honda-red text-slate-900 placeholder-slate-400 focus:bg-slate-50 transition-colors"
                     />
                   </div>
                   <button

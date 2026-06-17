@@ -34,7 +34,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 font-sans selection:bg-honda-red selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-honda-red selection:text-white">
       {/* Header Sticky Navigation */}
       <Header onOpenBooking={openBooking} />
 

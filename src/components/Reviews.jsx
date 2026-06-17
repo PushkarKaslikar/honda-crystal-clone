@@ -23,7 +23,7 @@ export default function Reviews() {
   const review = REVIEWS[current];
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-slate-950 text-white border-t border-slate-900 overflow-hidden relative">
+    <section className="py-20 px-6 md:px-12 bg-slate-50 text-slate-900 border-t border-slate-200 overflow-hidden relative">
       
       {/* Visual background ambient accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[200px] rounded-full bg-honda-red/5 blur-[120px] pointer-events-none" />
@@ -39,10 +39,10 @@ export default function Reviews() {
         </div>
 
         {/* Review Card */}
-        <div className="bg-slate-900/40 border border-slate-800 rounded-3xl p-8 md:p-12 relative shadow-xl text-center flex flex-col items-center">
+        <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 relative shadow-sm text-center flex flex-col items-center">
           
           {/* Quote Icon Overlay */}
-          <div className="absolute top-6 left-8 text-slate-800 pointer-events-none">
+          <div className="absolute top-6 left-8 text-slate-100 pointer-events-none">
             <MessageSquareQuote className="w-12 h-12 rotate-180" />
           </div>
 
@@ -51,19 +51,19 @@ export default function Reviews() {
             {Array.from({ length: 5 }).map((_, i) => (
               <Star 
                 key={i} 
-                className={`w-5 h-5 ${i < review.rating ? 'text-amber-400 fill-amber-450' : 'text-slate-700'}`} 
+                className={`w-5 h-5 ${i < review.rating ? 'text-amber-400 fill-amber-450' : 'text-slate-200'}`} 
               />
             ))}
           </div>
 
           {/* Text Content */}
-          <blockquote className="text-lg md:text-xl font-medium leading-relaxed text-slate-200 mb-8 max-w-2xl">
+          <blockquote className="text-lg md:text-xl font-medium leading-relaxed text-slate-700 mb-8 max-w-2xl relative z-10">
             "{review.comment}"
           </blockquote>
 
           {/* Author info */}
-          <div className="space-y-1">
-            <cite className="not-italic font-display font-bold text-white text-base">
+          <div className="space-y-1 relative z-10">
+            <cite className="not-italic font-display font-bold text-slate-900 text-base">
               {review.name}
             </cite>
             <span className="block text-slate-500 text-xs uppercase tracking-wider font-semibold">
@@ -72,16 +72,16 @@ export default function Reviews() {
           </div>
 
           {/* Manual navigation buttons */}
-          <div className="flex gap-3 mt-10">
+          <div className="flex gap-3 mt-10 relative z-10">
             <button
               onClick={handlePrev}
-              className="bg-slate-950 hover:bg-slate-850 text-slate-400 hover:text-white p-2 rounded-full border border-slate-850 hover:border-slate-750 transition-colors"
+              className="bg-white hover:bg-slate-50 text-slate-500 hover:text-slate-900 p-2 rounded-full border border-slate-200 hover:border-slate-300 transition-colors shadow-sm"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={handleNext}
-              className="bg-slate-950 hover:bg-slate-850 text-slate-400 hover:text-white p-2 rounded-full border border-slate-850 hover:border-slate-750 transition-colors"
+              className="bg-white hover:bg-slate-50 text-slate-500 hover:text-slate-900 p-2 rounded-full border border-slate-200 hover:border-slate-300 transition-colors shadow-sm"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -96,7 +96,7 @@ export default function Reviews() {
               key={idx}
               onClick={() => setCurrent(idx)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                current === idx ? 'w-6 bg-honda-red' : 'w-1.5 bg-slate-800 hover:bg-slate-600'
+                current === idx ? 'w-6 bg-honda-red' : 'w-1.5 bg-slate-200 hover:bg-slate-300'
               }`}
             />
           ))}
