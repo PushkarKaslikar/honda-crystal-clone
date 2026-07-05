@@ -7,9 +7,38 @@ import elevateBrownImg from '../assets/off_elevate_brown.png';
 import elevateGreyImg from '../assets/off_elevate_grey.png';
 import elevateSilverImg from '../assets/off_elevate_silver.png';
 import cityImg from '../assets/new_city.webp';
-import cityHybridImg from '../assets/new_city.webp'; 
+import cityHybridImg from '../assets/new_city.webp';
 import amazeImg from '../assets/new_amaze.webp';
 import zrvImg from '../assets/new_zrv.webp';
+
+
+//honda-city-images
+import cityBlack from '../assets/honda_city_black.png';
+import cityBlue from '../assets/honda_city_blue.png';
+import cityRed from '../assets/honda_city_red.png';
+import cityGrey from '../assets/honda_city_grey.png';
+import cityWhite from '../assets/honda_city_white.png';
+import citySilver from '../assets/honda_city_silver.png';
+
+
+// honda-city-hev
+import cityHevBrown from '../assets/honda-city-hev-brown.png';
+import cityHevBlue from '../assets/honda-city-hev-blue.png';
+import cityHevRed from '../assets/honda-city-hev-red.png';
+import cityHevWhite from '../assets/honda-city-hev-white.png';
+import cityHevGrey from '../assets/honda-city-hev-grey.png';
+import cityHevBlack from '../assets/honda-city-hev-black.png';
+
+
+//honda-amaze 
+import hondaAmazeRed from '../assets/honda-amaze-red.png';
+import hondaAmazeWhite from '../assets/honda-amaze-white.png';
+import hondaAmazeBlue from '../assets/honda-amaze-blue.png';
+import hondaAmazeGrey from '../assets/honda-amaze-grey.png';
+import hondaAmazeSilver from '../assets/honda-amaze-silver.png';
+import hondaAmazeBrown from '../assets/honda-amaze-brown.png';
+
+
 export const HONDA_CARS = [
   {
     id: 'elevate',
@@ -66,12 +95,12 @@ export const HONDA_CARS = [
       groundClearance: '165 mm'
     },
     colors: [
-      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(0deg) saturate(1)' },
-      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
-      { name: 'Obsidian Blue Pearl', hex: '#084177', imgTint: 'hue-rotate(220deg) saturate(1)' },
-      { name: 'Golden Brown Metallic', hex: '#5e3e23', imgTint: 'hue-rotate(30deg) brightness(0.5)' },
-      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness(1) saturate(0)' },
-      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness(0.75) saturate(0)' }
+      { name: 'Radiant Red Metallic', hex: '#cf2e2e', img: cityRed },
+      { name: 'Platinum White Pearl', hex: '#ffffff', img: cityWhite },
+      { name: 'Obsidian Blue Pearl', hex: '#084177', img: cityBlue },
+      { name: 'Crystal Black Pearl', hex: '#000000', img: cityBlack },
+      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', img: citySilver },
+      { name: 'Meteoroid Gray Metallic', hex: '#475569', img: cityGrey }
     ],
     features: [
       'Honda SENSING (ADAS) in Manual & CVT',
@@ -101,11 +130,12 @@ export const HONDA_CARS = [
       groundClearance: '162 mm'
     },
     colors: [
-      { name: 'Obsidian Blue Pearl', hex: '#084177', imgTint: 'hue-rotate(0deg) saturate(1)' },
-      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(140deg) saturate(1.5)' },
-      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
-      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness(1) saturate(0)' },
-      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness(0.75) saturate(0)' }
+      { name: 'Obsidian Blue Pearl', hex: '#084177', img: cityHevBlue },
+      { name: 'Golden Brown Metallic', hex: '#5e3e23', img: cityHevBrown },
+      { name: 'Radiant Red Metallic', hex: '#cf2e2e', img: cityHevRed },
+      { name: 'Platinum White Pearl', hex: '#ffffff', img: cityHevWhite },
+      { name: 'Crystal Black Pearl', hex: '#000000', img: cityHevBlack },
+      { name: 'Meteoroid Gray Metallic', hex: '#475569', img: cityHevGrey }
     ],
     features: [
       'Advanced Multi-Mode Drive (EV, Hybrid, Engine)',
@@ -135,11 +165,12 @@ export const HONDA_CARS = [
       groundClearance: '170 mm'
     },
     colors: [
-      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
-      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(0deg) saturate(1)' },
-      { name: 'Golden Brown Metallic', hex: '#5e3e23', imgTint: 'hue-rotate(30deg) brightness(0.5)' },
-      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', imgTint: 'brightness(1) saturate(0)' },
-      { name: 'Meteoroid Gray Metallic', hex: '#475569', imgTint: 'brightness(0.75) saturate(0)' }
+      { name: 'Platinum White Pearl', hex: '#ffffff', img: hondaAmazeWhite },
+      { name: 'Radiant Red Metallic', hex: '#cf2e2e', img: hondaAmazeRed },
+      { name: 'Golden Brown Metallic', hex: '#5e3e23', img: hondaAmazeBrown },
+      { name: 'Lunar Silver Metallic', hex: '#cbd5e1', img: hondaAmazeSilver },
+      { name: 'Meteoroid Gray Metallic', hex: '#475569', img: hondaAmazeGrey },
+      { name: 'Obsidian Blue Pearl', hex: '#084177', img: hondaAmazeBlue }
     ],
     features: [
       'Premium Beige Seats with Contour Styling',
@@ -150,38 +181,38 @@ export const HONDA_CARS = [
       'Rear Camera with 3 View Directions'
     ]
   },
-  {
-    id: 'zrv',
-    name: 'Honda ZR-V',
-    type: 'SUV',
-    tagline: 'Bookings Open',
-    price: 2000000,
-    priceStr: 'Bookings Open *',
-    img: zrvImg,
-    description: 'A premium, sporty SUV designed for the modern driver. Melding sleek aesthetics with Honda\'s legendary performance and cutting-edge tech.',
-    specs: {
-      engine: '2.0L i-VTEC Hybrid / 1.5L Turbo',
-      power: '184 PS @ 6000 rpm',
-      torque: '315 Nm @ 4000 rpm',
-      transmission: 'e-CVT / CVT',
-      mileage: '18.6 - 22.0 kmpl',
-      fuel: 'Petrol Hybrid',
-      groundClearance: '180 mm'
-    },
-    colors: [
-      { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
-      { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(0deg) saturate(1)' },
-      { name: 'Crystal Black Pearl', hex: '#000000', imgTint: 'brightness(0.5) saturate(0)' }
-    ],
-    features: [
-      'Sporty, Sleek Exterior Design',
-      'Honda SENSING Suite',
-      '9-inch Display Audio System',
-      'Dual Zone Automatic Climate Control',
-      'Panoramic Glass Sunroof',
-      'Premium Audio System'
-    ]
-  }
+  // {
+  //   id: 'zrv',
+  //   name: 'Honda ZR-V',
+  //   type: 'SUV',
+  //   tagline: 'Bookings Open',
+  //   price: 2000000,
+  //   priceStr: 'Bookings Open *',
+  //   img: zrvImg,
+  //   description: 'A premium, sporty SUV designed for the modern driver. Melding sleek aesthetics with Honda\'s legendary performance and cutting-edge tech.',
+  //   specs: {
+  //     engine: '2.0L i-VTEC Hybrid / 1.5L Turbo',
+  //     power: '184 PS @ 6000 rpm',
+  //     torque: '315 Nm @ 4000 rpm',
+  //     transmission: 'e-CVT / CVT',
+  //     mileage: '18.6 - 22.0 kmpl',
+  //     fuel: 'Petrol Hybrid',
+  //     groundClearance: '180 mm'
+  //   },
+  //   colors: [
+  //     { name: 'Platinum White Pearl', hex: '#ffffff', imgTint: 'brightness(1.25) saturate(0.5)' },
+  //     { name: 'Radiant Red Metallic', hex: '#cf2e2e', imgTint: 'hue-rotate(0deg) saturate(1)' },
+  //     { name: 'Crystal Black Pearl', hex: '#000000', imgTint: 'brightness(0.5) saturate(0)' }
+  //   ],
+  //   features: [
+  //     'Sporty, Sleek Exterior Design',
+  //     'Honda SENSING Suite',
+  //     '9-inch Display Audio System',
+  //     'Dual Zone Automatic Climate Control',
+  //     'Panoramic Glass Sunroof',
+  //     'Premium Audio System'
+  //   ]
+  // }
 ];
 
 export const OUTLETS = [
